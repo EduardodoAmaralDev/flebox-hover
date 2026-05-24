@@ -1,0 +1,106 @@
+/* CSS de estilo*/
+
+/* Configuração geral do corpo da página */
+body {
+    background-color: #f0f0f0; /* Cor de fundo clara para melhor contraste */
+    font-size: 100%; /* Define o tamanho padrão baseado no navegador (16px) */
+    font-family: Arial, sans-serif;
+}
+
+/* 
+  Container pai no flexbox
+  A propriedade display: flex ativa as funções flexíveis.
+  O flex-direction: row alinha as 3 colunas filhas lado a lado.
+*/
+/* Container principal */
+.container {
+    display: flex;              /* Ativa o Flexbox */
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;                  /* Espaço entre as colunas */
+    flex-wrap: wrap;            /* Permite quebrar linha em telas pequenas */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 
+  Declaração simultanea das 3 funções para as colunas filhas.
+*/
+/* Configuração padrão das 3 colunas */
+.esquerda,
+.centro,
+.direita {
+
+    flex: 1;                    /* Todas ocupam espaço igual */
+    min-width: 250px;           /* Evita colunas muito estreitas */
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;        /* Cantos arredondados */
+    box-sizing: border-box;
+}
+
+/* 
+  Esquema de cores das colunas, com a central mais escura para dar contraste.
+*/
+.esquerda {
+    background-color: #ecdfdf; /* Cinza claro */
+}
+
+.centro {
+    background-color: #c7c5c5; /* Cinza médio para dar contraste no meio */
+}
+
+.direita {
+    background-color: #ecdfdf; /* Cinza claro */
+}
+
+h2 {
+    text-align: center;
+    background-color: blue; /* Cor de fundo dos textos de titulos*/
+    color: white;
+    margin-bottom: 10px;    /* Afastamento do título do parágrafo */
+}
+
+p {
+    color: black;
+    margin-bottom: 15px;    /* Afasta o parágrafo e texto das imagens */
+}
+
+/* 
+  Classe que padroniza o tamanho das imagens e o estilo da fonte.
+  Usa o ponto "." antes do nome da classe.
+*/
+.fonte {
+    font-weight: bold;      /* Mantém o padrão em negrito (Página 19) */
+    font-size: 0.8em;       /* Tamanho relativo menor para legendas/fontes (Página 21) */
+    display: block;         /* Transforma a imagem em bloco para que fiquem uma abaixo da outra */
+    
+    /* 
+      Correção de proporção das imagens para que fiquem do mesmo tamanho e se ajustem ao container.
+    */
+    width: 85%;             
+    
+    margin: 15px auto;      /* Centraliza a imagem horizontalmente e dá espaço vertical */
+}
+
+.box {
+    width: 350px;           /* Largura fixa para a caixa */
+    margin: 0, 10px; /* Centraliza a caixa horizontalmente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar a caixa */
+    border: 2px solid black; /* Borda preta */
+    padding: 0px;           /* Espaço interno */
+    margin-top: 20px;        /* Espaço acima da caixa */
+    transition: 1s; /* Transição suave para a animação */
+}
+
+.box-img {
+    display: block;         /* Transforma a imagem em bloco para centralizá-la */
+    width: 100%;           /* A imagem ocupa toda a largura da caixa */
+    border-radius: 5px;    /* Cantos arredondados para a imagem */
+}
+
+.box:hover {
+    transform: scale(1.2); /* Aumenta a caixa em 20% ao passar o mouse */
+    z-index: 2; /* Garante que a caixa fique acima das outras ao ser ampliada */
+}
